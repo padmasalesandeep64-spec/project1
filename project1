@@ -1,0 +1,48 @@
+print("========== SUPERMARKET BILL ==========")
+
+name = input("Enter Customer Name: ")
+
+print("\nAvailable Items")
+print("1. Rice       - Rs. 60/kg")
+print("2. Sugar      - Rs. 45/kg")
+print("3. Milk       - Rs. 30/litre")
+print("4. Oil        - Rs. 150/litre")
+print("5. Biscuits   - Rs. 20/packet")
+
+rice = int(input("\nEnter Rice quantity (kg): "))
+sugar = int(input("Enter Sugar quantity (kg): "))
+milk = int(input("Enter Milk quantity (litre): "))
+oil = int(input("Enter Oil quantity (litre): "))
+biscuits = int(input("Enter Biscuits quantity (packet): "))
+
+rice_price = rice * 60
+sugar_price = sugar * 45
+milk_price = milk * 30
+oil_price = oil * 150
+biscuit_price = biscuits * 20
+
+total = rice_price + sugar_price + milk_price + oil_price + biscuit_price
+
+gst = total * 5 / 100
+discount = total * 0.10 if total >= 1000 else 0
+
+final_amount = total + gst - discount
+
+print("\n========== CUSTOMER BILL ==========")
+print("Customer Name:", name)
+print("-----------------------------------")
+print("Item       Qty       Amount")
+print("-----------------------------------")
+print("Rice      ", rice, "       Rs.", rice_price)
+print("Sugar     ", sugar, "       Rs.", sugar_price)
+print("Milk      ", milk, "       Rs.", milk_price)
+print("Oil       ", oil, "       Rs.", oil_price)
+print("Biscuits  ", biscuits, "       Rs.", biscuit_price)
+print("-----------------------------------")
+print("Total Amount: Rs.", total)
+print("GST (5%): Rs.", gst)
+print("Discount: Rs.", discount)
+print("-----------------------------------")
+print("Final Amount: Rs.", final_amount)
+print("===================================")
+print("Thank You! Visit Again.")
